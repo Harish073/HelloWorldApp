@@ -5,10 +5,10 @@ FROM openjdk:latest
 WORKDIR /app
 
 # Copy the JAR file into the container
-COPY myapp.jar /app
+COPY myapp.war /app
 
 # Expose the port your application uses
 EXPOSE 8081
 
 # Command to run the application when the container starts
-CMD ["java", "-jar", "myapp.jar"]
+CMD ["java", "-war", "myapp.war"]
