@@ -1,14 +1,14 @@
-# Use a base image with Java installed
-FROM openjdk:latest
+# Use Tomcat as the base image
+FROM tomcat:latest
 
-# Set the working directory inside the container
-WORKDIR /app
+# Remove default Tomcat applications
+RUN rm -rf /usr/local/tomcat/webapps/*
 
-# Copy the JAR file into the container
-COPY myapp.war /app
+# Copy your .war file into the Tomcat webapps directory
+COPY my-web-app.war /usr/local/tomcat/webapps/
 
-# Expose the port your application uses
+# Expose the default Tomcat port
 EXPOSE 8081
 
-# Command to run the application when the container starts
-CMD ["java", "-war", "myapp.war"]
+# Start Tomcat when the container launches
+CMD ["catalina.sh", "run"]
