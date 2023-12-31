@@ -4,22 +4,23 @@
          
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
-    <artifactId>my-web-app</artifactId>
+    <artifactId>my-java-app</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging> <!-- This indicates it's a JAR project -->
 
     <dependencies>
-        <!-- Servlet API -->
+        <!-- Define your dependencies here -->
+        <!-- For example, uncomment below to include Apache Commons Lang -->
+        <!--
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>4.0.1</version>
-            <scope>provided</scope>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.12.0</version>
         </dependency>
+        -->
     </dependencies>
 
     <build>
-        <finalName>my-web-app</finalName>
         <plugins>
             <!-- Maven compiler plugin -->
             <plugin>
@@ -31,11 +32,19 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-            <!-- Maven WAR plugin -->
+            <!-- Maven JAR plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>3.3.2</version>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <!-- Set the main class for the JAR -->
+                    <archive>
+                        <manifest>
+                            <mainClass>com.example.MainClass</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
             </plugin>
         </plugins>
     </build>
