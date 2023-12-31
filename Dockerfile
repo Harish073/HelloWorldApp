@@ -5,7 +5,7 @@ FROM tomcat:latest
 RUN rm -rf /usr/local/tomcat/webapps/*
 
 # Copy your .war file into the Tomcat webapps directory
-COPY my-web-app.war /usr/local/tomcat/webapps/
+COPY /var/lib/jenkins/workspace/myapp/target/my-web-app.war /usr/local/tomcat/webapps/
 
 # Expose the default Tomcat port
 EXPOSE 8081
