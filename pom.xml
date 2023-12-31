@@ -18,12 +18,7 @@
             <version>3.12.0</version>
         </dependency>
         -->
-             <dependency>
-    <groupId>jakarta.servlet</groupId>
-    <artifactId>jakarta.servlet-api</artifactId>
-    <version>5.0.0</version> <!-- or the version compatible with your servlet container -->
-    <scope>provided</scope>
-</dependency>
+         
               <dependency>
         <groupId>jakarta.servlet</groupId>
         <artifactId>jakarta.servlet-api</artifactId>
