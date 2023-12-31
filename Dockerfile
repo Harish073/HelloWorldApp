@@ -1,7 +1,14 @@
-# Use the official Tomcat 9 image as the base image
-FROM tomcat:9-jdk11-openjdk-slim
+# Use a base image with Java installed
+FROM openjdk:latest
 
-# Copy the WAR file into the webapps directory of Tomcat
-COPY ./target/HelloWorldApp.war /usr/local/tomcat/webapps/
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the JAR file into the container
+COPY myapp.jar /app
+
+# Expose the port your application uses
 EXPOSE 8081
-CMD ["java", "-war", "HelloWorldApp.war"]
+
+# Command to run the application when the container starts
+CMD ["java", "-jar", "myapp.jar"]
