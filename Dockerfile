@@ -9,4 +9,4 @@ COPY target/my-web-app.war /opt/tomcat/apache-tomcat-10.1.17/webapps
 EXPOSE 8081
 
 # Start Tomcat when the container launches
-CMD ["./bin/startup.sh", "run"]
+CMD ["./startup.sh", "run"]
