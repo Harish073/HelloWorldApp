@@ -1,9 +1,7 @@
 # Use Tomcat as the base image
 FROM tomcat:latest
 
-# Remove default Tomcat applications
-
-
+WORKDIR /opt/tomcat/apache-tomcat-10.1.17/webapps
 # Copy your .war file into the Tomcat webapps directory
 COPY target/my-web-app.war /opt/tomcat/apache-tomcat-10.1.17/webapps
 
