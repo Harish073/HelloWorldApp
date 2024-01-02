@@ -2,9 +2,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Hello JSP</title>
+    <title>My App</title>
 </head>
 <body>
-    <h1>Hello, this is a JSP!</h1>
+    <h1>!.....Hello World.....!</h1>
 </body>
 </html>
